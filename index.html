@@ -95,6 +95,17 @@ body {
 
 	</head>
 	<body>
+		<script>
+if (localStorage.getItem("allowed") !== "yes") {
+  const code = prompt("Code d'accès privé");
+  if (code === "Yamakasi") {
+    localStorage.setItem("allowed", "yes");
+  } else {
+    document.body.innerHTML = "Accès refusé";
+  }
+}
+</script>
+
 		<canvas id="canvas">
 			Your browser does not support the canvas tag.
 		</canvas>
